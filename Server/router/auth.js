@@ -51,7 +51,7 @@ router.post('/signin',async(req,res)=>{
                 httpOnly:true
             })
         if(!isMatch){
-            res.json({error:"Invalid credential"})
+            res.status(400).json({error:"Invalid credential"})
 
         }
         else{
@@ -60,7 +60,7 @@ router.post('/signin',async(req,res)=>{
         }
         }
         else{
-            res.json({error:"Invalid credential"})
+            res.status(400).json({error:"Invalid credential"})
 
         }
     }catch(err){
@@ -113,25 +113,24 @@ router.get('/logout',authenticate,(req,res)=>{
 
 router.post('/chat', authenticate, async (req, res) => {
     try {
-        const { user, assistant } = req.body;
-        if (!user || !assistant) {
-            console.log('error in user message');
+        const { user, prevsummary } = req.body;
+        if (!user || !prevsummary) {
+            console.log('error in fetching data');
             return res.status(400).json({ error: 'Please enter your message' });}
         const userConnect = await User.findOne({ _id: req.userID });
         if (userConnect) {
-            console.log(user)
-            const aiResponse = await generateAIResponse(user);
-            console.log(aiResponse)
-            const userMessage = await userConnect.addQuerry(user, aiResponse)
-            if (!aiResponse || !userMessage) {
+
+            const {aiResponse,summary} = await generateAIResponse(user,prevsummary);
+            const userMessage = await userConnect.addQuerry(user, aiResponse,summary)
+            if (!aiResponse || !userMessage || !summary) {
                 console.log('Error in adding message to user');
                 return res.status(500).json({ error: 'Internal Server2 Error' });
                 } 
             else {
-                console.log(aiResponse);
                 // Generate an AI response based on the user message
                 return res.status(200).json({ message: 'User message received'})
-            }} 
+            }}
+
         else {console.log('User not found');
             return res.status(404).json({ error: 'User not found' });}
         } catch (error) {

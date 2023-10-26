@@ -56,9 +56,13 @@ const userSchema=new mongoose.Schema({
     chat:[
         {
             user:{
-                type:String},
+                type:String,
+                required:true
+            },
             assitant:{
-                type:String}
+                type:String,
+                required:true
+            }
         }
     ],
     tokens:[
@@ -99,10 +103,13 @@ userSchema.methods.addMessage=async function(name,email,phone,message){
     }
 }
 
-userSchema.methods.addQuerry=async function(user,assitant){
+userSchema.methods.addQuerry=async function(user,assitant,summary){
     try{
-        console.log(user)
-        this.chat=this.chat.concat({user,assitant})
+        
+        this.chat=this.chat.concat({user,assitant:assitant})
+        if (summary) {
+            this.summary = summary; // Update the summary if provided
+        }
         await this.save()
         return this.chat
     }catch(err){console.log(err)}

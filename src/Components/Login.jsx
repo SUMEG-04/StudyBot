@@ -24,6 +24,8 @@ const Login = () => {
     })
     const data=res.json()
 
+    console.log(data)
+    console.log(res.status)
     if(res.status===400 || !data){
       window.alert("Invalid Credential")
     }else{
@@ -36,7 +38,7 @@ const Login = () => {
     <>
       <section className='sign-in'>
             <div className="container mt-5">
-                <div className="signin-content d-flex justify-content-evenly">
+                <div className="signin-content">
                     <div className="signin-image align-self-center">
                       <figure>
                         <img src={loginpic} alt="" />

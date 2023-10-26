@@ -1,3 +1,303 @@
-img{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar-brand,.profile-img img{
     width: 100px;
+}
+.navbar-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff; /* Change this to the desired background color */
+  }
+
+.container {
+    padding-bottom: 60px; /* Adjust to leave space for the input container */
+  }
+  
+  /* Style the chat messages */
+  .chat {
+    margin-bottom: 100px; /* Adjust this value to create more space at the bottom */
+  }
+  
+  /* Style the input container */
+  .input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: center;
+  }
+  
+  /* Style the input field */
+  .input-container input {
+    width: calc(100% - 4rem); /* Adjust the width based on your design */
+    margin-right: 10px; /* Add a small margin between the input field and the button */
+  }
+  
+  /* Style the send button */
+  .input-container button {
+    width: 4rem; /* Adjust the width as needed */
+  }
+.chat{
+    background-color: #11111128;
+    padding: 1.3rem;
+}
+.user_msg{
+    background-color: darkgray;
+    border-radius: 0.2rem;
+    padding: 1.3rem;
+    color: aliceblue;
+    font-size:medium;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.ai_msg{
+    background-color: rgb(0, 162, 255);
+    border-radius: 0.2rem;
+    padding: 1.3rem;
+    color: aliceblue;
+    font-size:medium;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+span{
+    color: black;
+}
+.input-container{
+    position:fixed;
+    bottom: 0px; /* Position the button at the bottom of the container */
+}
+.my-lst:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+    box-shadow: 0 1rem 1.8rem 0.5rem rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  /* Add this CSS to your stylesheet or in a separate CSS file */
+
+/* Style the sign-in section */
+.sign-in {
+    padding: 50px 0;
+  }
+  
+  /* Style the container */
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Style the signin-content */
+  .signin-content {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  /* Style the signin-image */
+  .signin-image {
+    text-align: center;
+  }
+  
+  .signin-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Style the signup-image-link */
+  .signup-image-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  /* Style the signin-form */
+  .signin-form {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-titile {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the form */
+  form {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the form-group */
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Style the inputs */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="number"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 15px 40px 15px 60px; /* Adjust the left padding here */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box; /* Add this property to include padding in width */
+  }
+  
+  /* Style the form-button */
+  .form-button {
+    text-align: center;
+  }
+  
+  form .form-submit {
+    background: #007BFF;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Style the form-button on hover */
+  form .form-submit:hover {
+    background: #0056b3;
+  }
+  
+  /* Add more styles as needed to match your design */
+  
+  .signup-image,
+.signin-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+/* Style for the images */
+.signup-image img,
+.signin-image img {
+  max-width: 100%;
+  max-height: 200px; /* Adjust the max height as needed */
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Style for the image links */
+.signup-image-link,
+.signup-image-link {
+  text-decoration: none;
+  color: #007BFF;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Add this CSS to your stylesheet or in a separate CSS file */
+
+/* Styles for contact_info section */
+.contact_info {
+  padding: 50px 0;
+}
+
+.contact_info_item {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.contact_info_item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.contact_info_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.contact_info_text {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Styles for contact_form section */
+.contact_form_container {
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact_form_title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact_form_name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_field {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.contact_form_text textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.contact_form_button {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.contact_submit_button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.contact_submit_button:hover {
+  background-color: #0056b3;
 }
