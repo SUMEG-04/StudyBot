@@ -102,7 +102,7 @@ const Chat = () => {
           className="btn btn-primary col-lg-1"
           onClick={handleSendMessage}
         >
-          <SendIcon />
+          <SendIcon/>
         </button>
       </div>
     </div>
