@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Login from './Components/Login.jsx';
-import { UserContext } from '../App';
 import { MemoryRouter } from 'react-router-dom';
+import { UserContext } from './App.js';
 
 // Mock navigate function
 const mockedNavigate = jest.fn();
